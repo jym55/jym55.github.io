@@ -1,18 +1,11 @@
 ---
 layout: page
-title: About
+title: À propos
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Je suis autodidacte en informatique et les pages présentées ici sont sans aucune prétention. Bon nombre des codes données sont et seront perfectibles.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+La seule ambition est de fournir à toute personne voulant essayer Typst un ensemble de fonctions permettant d'obtenir assez rapidement un document stucturé et agréable à lire.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+Si vous voulez en savoir plus, voici le lien vers la [documentation officielle](https://typst.app/docs/ "lien vers la doc") (en anglais !).
