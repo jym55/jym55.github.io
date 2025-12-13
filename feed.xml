@@ -3,7 +3,7 @@
     <title>Le carnet de JYM</title>
     <link href="https://jym55.github.io/feed.xml" rel="self" />
     <link href="https://jym55.github.io" />
-    <updated>2025-12-13T16:25:24+01:00</updated>
+    <updated>2025-12-13T18:03:46+01:00</updated>
     <author>
         <name>jym</name>
     </author>
@@ -20,7 +20,7 @@
         <updated>2025-09-07T12:18:00+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                    Pour rédiger des documents en sciences physiques, je conseille d’utiliser les deux extensions suivantes : Les codes d’importation sont : #ce(&quot;C2H6O&quot;) -&gt; ou #ce(&quot;Cl- + NH4^+&quot;) -&gt; ![formule]({{ site.baseurl }}/illustrations/b11-img02.png) #ce(&quot;HCl + H2O -&gt; H3O+ + Cl-&quot;) -&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img03.png) ou en mode maths&hellip;
+                    Pour rédiger des documents en sciences physiques, je conseille d’utiliser les deux extensions suivantes : Les codes d’importation sont : #ce(&quot;C2H6O&quot;) -&gt; ou #ce(&quot;Cl- + NH4^+&quot;) -&gt; #ce(&quot;HCl + H2O -&gt; H3O+ + Cl-&quot;) -&gt; ou en mode maths : $#ce(&quot;HCl + H2O -&gt; H3O+&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -40,39 +40,39 @@
 </code></pre>
 <p>-&gt; <figure class="post__image"><img loading="lazy" src="/illustrations/b11-img01.png" alt="formule" data-is-external-image="true"></figure></p><p>ou</p><pre><code>#ce(&quot;Cl- + NH4^+&quot;)
 </code></pre>
-<p>-&gt; ![formule]({{ site.baseurl }}/illustrations/b11-img02.png)</p><h3 id="équation-chimique-">Équation chimique :</h3>
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img02.png" alt="formule" data-is-external-image="true"></figure></p><h3 id="équation-chimique-">Équation chimique :</h3>
 <pre><code>#ce(&quot;HCl + H2O -&gt; H3O+ + Cl-&quot;)
 </code></pre>
-<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img03.png)</p><p>ou en mode maths :</p><pre><code>$#ce(&quot;HCl + H2O -&gt; H3O+ + Cl-&quot;)$
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img03.png" alt="équation" data-is-external-image="true"></figure></p><p>ou en mode maths :</p><pre><code>$#ce(&quot;HCl + H2O -&gt; H3O+ + Cl-&quot;)$
 </code></pre>
 <h3 id="écriture-conventionnelle-des-noyaux">Écriture conventionnelle des noyaux</h3>
 <pre><code>#ce(&quot;@Ag,108,47@&quot;)
 </code></pre>
-<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img04.png)</p><p>Pour plus d’informations : <a href="https://github.com/schang412/typst-whalogen/blob/master/manual.pdf">manuel au format pdf</a></p><h2 id="2-fancy-units">2. fancy-units</h2>
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img04.png" alt="équation" data-is-external-image="true"></figure></p><p>Pour plus d’informations : <a href="https://github.com/schang412/typst-whalogen/blob/master/manual.pdf">manuel au format pdf</a></p><h2 id="2-fancy-units">2. fancy-units</h2>
 <p>L’écriture des unités n’est pas simple avec Typst. En effet, par défaut les unités à une lettres sont identifiée comme des variables et donc mise en italique, les autres unités doivent être mise entre guillemets et les exposants entre parenthèses, exemple :</p><pre><code>$9,81 N dot &quot;kg&quot;^(-1)$
 </code></pre>
-<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img05.png)</p><p>La solution est alors la suivante :</p><pre><code>$9,81 space upright(N) dot &quot;kg&quot;^(-1)$
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img05.png" alt="équation" data-is-external-image="true"></figure></p><p>La solution est alors la suivante :</p><pre><code>$9,81 space upright(N) dot &quot;kg&quot;^(-1)$
 </code></pre>
-<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img06.png)</p><p>Cette manière d’écrire devient lourde assez rapidement.</p><p>L’extension fancy-unit allège cela :</p><pre><code>9,81 #unit[N/kg]
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img06.png" alt="équation" data-is-external-image="true"></figure></p><p>Cette manière d’écrire devient lourde assez rapidement.</p><p>L’extension fancy-unit allège cela :</p><pre><code>9,81 #unit[N/kg]
 </code></pre>
-<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img07.png)</p><p>Mais le problème est qu’entre les unités <em>fancy-unit</em> place par défaut un espace et  non un point médian comme c’est l’usage en France. Pas de soucis, le concepteur y a pensé en introduisant la commande <code>#fancy-units-configure()</code>.</p><p>Au début du document, on place la séquence suivante :</p><pre><code>#fancy-units-configure(
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img07.png" alt="équation" data-is-external-image="true"></figure></p><p>Mais le problème est qu’entre les unités <em>fancy-unit</em> place par défaut un espace et  non un point médian comme c’est l’usage en France. Pas de soucis, le concepteur y a pensé en introduisant la commande <code>#fancy-units-configure()</code>.</p><p>Au début du document, on place la séquence suivante :</p><pre><code>#fancy-units-configure(
   unit-separator: sym.dot,
 )
 </code></pre>
 <pre><code>9,81 #unit[N/kg]
 </code></pre>
-<p>ce qui donnera : ![équation]({{ site.baseurl }}/illustrations/b11-img08.png)</p><p>Cependant avez-vous remarquez que les chiffres sont plus petits que les lettres. Le mode mathématique rétablit cela, mais l’unité est trop près de la valeur :</p><pre><code>$9,81 #unit[N/kg]$
+<p>ce qui donnera : <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img08.png" alt="équation" data-is-external-image="true"></figure></p><p>Cependant avez-vous remarquez que les chiffres sont plus petits que les lettres. Le mode mathématique rétablit cela, mais l’unité est trop près de la valeur :</p><pre><code>$9,81 #unit[N/kg]$
 </code></pre>
-<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img09.png)</p><pre><code>$9,81 space #unit[N/kg]$
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img09.png" alt="équation" data-is-external-image="true"></figure></p><pre><code>$9,81 space #unit[N/kg]$
 </code></pre>
-<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img10.png)</p><p>L’écriture est au final légèrement allégée. Il faut penser au mode mathématique et à l’espace ou changer la police du texte (ou la police du mode mathématique) pour harmoniser chiffres et lettres.</p><p>Dans ce paquet, il existe la fonction <em>qty()</em> (quantities) qui combine les fonctions _num()_et <em>unit()</em>.</p><p>Avec la configuration précédentes :</p><pre><code>#qty[9.81][N/kg]
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img10.png" alt="équation" data-is-external-image="true"></figure></p><p>L’écriture est au final légèrement allégée. Il faut penser au mode mathématique et à l’espace ou changer la police du texte (ou la police du mode mathématique) pour harmoniser chiffres et lettres.</p><p>Dans ce paquet, il existe la fonction <em>qty()</em> (quantities) qui combine les fonctions _num()_et <em>unit()</em>.</p><p>Avec la configuration précédentes :</p><pre><code>#qty[9.81][N/kg]
 </code></pre>
-<p>donnera le résultat suivant : ![équation]({{ site.baseurl }}/illustrations/b11-img11.png)</p><p>Chiffres et lettres sont uniformisés mais ce n’est pas le bon séparateur décimal et l’unité s’est légèrement rapprochée du nombre.</p><p>Pour le séparateur décimal :</p><pre><code>#fancy-units-configure(
+<p>donnera le résultat suivant : <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img11.png" alt="équation" data-is-external-image="true"></figure></p><p>Chiffres et lettres sont uniformisés mais ce n’est pas le bon séparateur décimal et l’unité s’est légèrement rapprochée du nombre.</p><p>Pour le séparateur décimal :</p><pre><code>#fancy-units-configure(
   decimal-separator: sym.comma,
   unit-separator: sym.dot,  
 )
 </code></pre>
-<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img12.png)</p><p>Pour éloigner les unités d’un espace :</p><pre><code>#fancy-units-configure(
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img12.png" alt="équation" data-is-external-image="true"></figure></p><p>Pour éloigner les unités d’un espace :</p><pre><code>#fancy-units-configure(
   decimal-separator: sym.comma,
   quantity-separator: &quot; &quot;,
   unit-separator: sym.dot,  
@@ -89,7 +89,7 @@
 <p>fonctionnera parfaitement et l’écriture devient plus intuitive.</p><p>Voilà, le document est configuré pour écrire facilement des textes en sciences avec les conventions françaises.</p><p>Pour découvrir les autres fonctions du paquet : <a href="https://github.com/janekfleper/typst-fancy-units/releases/download/v0.1.1/manual.pdf">manuel au format pdf</a></p><hr>
 <h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
 <ul>
-<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/commentaires">Laisser un commentaire</a></li>
 <li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
 </ul>
 
@@ -127,7 +127,7 @@
     [Ligne 2], [], [], [],[],[],
 )
 </code></pre>
-<figure class="post__image"><img loading="lazy" src="/home/jeanyves/Documents/Publii/sites/illustrations" alt="Tableau 1" data-is-external-image="true"></figure><p>–</p><p>Tableau simple avec les cellules de la première ligne en fond gris clair :</p><pre><code>#set table(
+<figure class="post__image"><img loading="lazy" src="./illustrations/b10-img01.png" alt="Tableau 1" data-is-external-image="true"></figure><p>–</p><p>Tableau simple avec les cellules de la première ligne en fond gris clair :</p><pre><code>#set table(
     fill: (x, y) =&gt;
     if y == 0 {gray.lighten(80%)},
     inset: 1em,
@@ -160,7 +160,7 @@
 <figure class="post__image"><img loading="lazy" src="./illustrations/b10-img03.png" alt="Tableau 3" data-is-external-image="true"></figure><p>La page de la documentation officielle sur les <a href="https://typst.app/docs/reference/model/table/">tableaux</a></p><hr>
 <h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
 <ul>
-<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/commentaires">Laisser un commentaire</a></li>
 <li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
 </ul>
 
@@ -233,7 +233,7 @@
 <hr>
 <h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
 <ul>
-<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/commentaires">Laisser un commentaire</a></li>
 <li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
 </ul>
 
@@ -343,7 +343,7 @@
 <hr>
 <h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
 <ul>
-<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/commentaires">Laisser un commentaire</a></li>
 <li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
 </ul>
 
@@ -403,7 +403,7 @@ La ligne après la balise &quot;grid&quot; qui occupera toute la largeur de la p
 <hr>
 <h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
 <ul>
-<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/commentaires">Laisser un commentaire</a></li>
 <li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
 </ul>
 
@@ -470,7 +470,7 @@ La ligne après la balise &quot;grid&quot; qui occupera toute la largeur de la p
 <hr>
 <h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
 <ul>
-<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/commentaires">Laisser un commentaire</a></li>
 <li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
 </ul>
 
@@ -523,7 +523,7 @@ mais elle peut contenir une information sur la taille désirée
 <hr>
 <h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
 <ul>
-<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/commentaires">Laisser un commentaire</a></li>
 <li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
 </ul>
 
@@ -587,7 +587,7 @@ Un IDE minimaliste mais qui permet de prévisualiser le fichier pdf et qui intè
 <hr>
 <h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
 <ul>
-<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/commentaires">Laisser un commentaire</a></li>
 <li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
 </ul>
 
