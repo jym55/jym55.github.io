@@ -3,12 +3,118 @@
     <title>Le carnet de JYM</title>
     <link href="https://jym55.github.io/feed.xml" rel="self" />
     <link href="https://jym55.github.io" />
-    <updated>2025-12-13T18:03:46+01:00</updated>
+    <updated>2025-12-13T18:31:34+01:00</updated>
     <author>
         <name>jym</name>
     </author>
     <id>https://jym55.github.io</id>
 
+    <entry>
+        <title>Tableau d&#x27;avancement</title>
+        <author>
+            <name>jym</name>
+        </author>
+        <link href="https://jym55.github.io/tableau-davancement.html"/>
+        <id>https://jym55.github.io/tableau-davancement.html</id>
+            <category term="typst"/>
+            <category term="chimie"/>
+
+        <updated>2025-10-30T18:31:00+01:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Un tableau d’avancement en chimie Voici le code pour obtenir un tableau d’avancement en chimie : table( columns: (auto, auto, auto, auto, auto, auto, auto,auto, auto, auto, auto, auto, auto, auto), align: center, stroke: 0.4pt, table.hline(y: 0, stroke: none,), table.hline(y: 4, stroke: none, end: 1),&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h2 id="un-tableau-davancement-en-chimie">Un tableau d’avancement en chimie</h2>
+<p>Voici le code pour obtenir un tableau d’avancement en chimie :</p><pre><code>table(
+  columns: (auto, auto, auto, auto, auto, auto, auto,auto, auto, auto, auto, auto, auto, auto),
+  align: center,
+  stroke: 0.4pt,
+  table.hline(y: 0, stroke: none,),
+  table.hline(y: 4, stroke: none, end: 1),
+  table.vline(x: 0, stroke: none, end: 1),
+  table.vline(x: 1, stroke: none, end: 1),
+  table.vline(x: 2, stroke: none, end: 1),
+  table.vline(x: 3, stroke: none),
+  table.vline(x: 4, stroke: none),
+  table.vline(x: 5, stroke: none, end: 1),
+  table.vline(x: 6, stroke: none),
+  table.vline(x: 7, stroke: none),
+  table.vline(x: 8, stroke: none, end: 1),
+  table.vline(x: 9, stroke: none),
+  table.vline(x: 10, stroke: none),
+  table.vline(x: 11, stroke: none, end:1),
+  table.vline(x: 12, stroke: none),
+  table.vline(x: 13, stroke: none),
+  table.vline(x: 14, stroke: none, end: 1),
+
+table.cell(colspan: 2, align: left,)[équation],[], [a.A],table.cell(colspan: 2, align: center)[+],[b. B],table.cell(colspan: 2, align: center)[$arrow.r$],[c. C],table.cell(colspan: 2, align: center)[+],[d. D],[],
+[État], [Avancement \ (mol)], table.cell(colspan: 12,align: center,)[Quantité de matière (mol)],
+[E.I.], [0], [], [0,50], [], [], [0,50], [], [], [0,50], [], [], [0,50], [],
+[EF], [$x_f$], [], [], [], [], [], [], [], [], [], [], [], [],
+[],[$x_&quot;max&quot;$],[], [], [], [], [], [], [], [], [], [], [], [],
+)
+</code></pre>
+<hr>
+<h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
+<ul>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/commentaires">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
+</ul>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>La fonction Block</title>
+        <author>
+            <name>jym</name>
+        </author>
+        <link href="https://jym55.github.io/la-fonction-block.html"/>
+        <id>https://jym55.github.io/la-fonction-block.html</id>
+            <category term="typst"/>
+            <category term="block"/>
+
+        <updated>2025-09-14T18:28:00+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Placer un paragraphe ou un texte sur un fond Voici le code : #block( fill: luma(230), inset: 8pt, radius: 4pt, width: 100%, [#lorem(40)], ) -&gt; Code à placer en début de fichier. #let asavoir(body) = { block( fill: luma(230), inset: 8pt, radius: 4pt, width: 100%,&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h2 id="placer-un-paragraphe-ou-un-texte-sur-un-fond">Placer un paragraphe ou un texte sur un fond</h2>
+<p>Voici le code :</p><pre><code>#block(
+   fill: luma(230),
+   inset: 8pt,
+   radius: 4pt,
+   width: 100%,
+   [#lorem(40)],
+)
+</code></pre>
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b13-img01.png" alt="formule" data-is-external-image="true"></figure></p><h2 id="codifier-un-block">Codifier un block</h2>
+<p>Code à placer en début de fichier.</p><pre><code>#let asavoir(body) = {
+    block(
+        fill: luma(230),
+        inset: 8pt,
+        radius: 4pt,
+        width: 100%,
+        [#body],
+    )
+}
+</code></pre>
+<p>L’appel de la fonction « asavoir » est . <code>#asavoir[Le texte ici]</code>.</p><hr>
+<h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
+<ul>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/commentaires">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
+</ul>
+
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Extensions scientifiques</title>
         <author>
@@ -38,7 +144,7 @@
 <h3 id="formule-chimique">Formule chimique</h3>
 <pre><code>#ce(&quot;C2H6O&quot;)
 </code></pre>
-<p>-&gt; <figure class="post__image"><img loading="lazy" src="/illustrations/b11-img01.png" alt="formule" data-is-external-image="true"></figure></p><p>ou</p><pre><code>#ce(&quot;Cl- + NH4^+&quot;)
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img01.png" alt="formule" data-is-external-image="true"></figure></p><p>ou</p><pre><code>#ce(&quot;Cl- + NH4^+&quot;)
 </code></pre>
 <p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img02.png" alt="formule" data-is-external-image="true"></figure></p><h3 id="équation-chimique-">Équation chimique :</h3>
 <pre><code>#ce(&quot;HCl + H2O -&gt; H3O+ + Cl-&quot;)
