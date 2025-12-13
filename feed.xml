@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+    <title>Le carnet de JYM</title>
+    <link href="https://jym55.github.io/feed.xml" rel="self" />
+    <link href="https://jym55.github.io" />
+    <updated>2025-12-13T16:25:24+01:00</updated>
+    <author>
+        <name>jym</name>
+    </author>
+    <id>https://jym55.github.io</id>
+
+    <entry>
+        <title>Extensions scientifiques</title>
+        <author>
+            <name>jym</name>
+        </author>
+        <link href="https://jym55.github.io/extensions-scientifiques.html"/>
+        <id>https://jym55.github.io/extensions-scientifiques.html</id>
+
+        <updated>2025-09-07T12:18:00+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Pour rédiger des documents en sciences physiques, je conseille d’utiliser les deux extensions suivantes : Les codes d’importation sont : #ce(&quot;C2H6O&quot;) -&gt; ou #ce(&quot;Cl- + NH4^+&quot;) -&gt; ![formule]({{ site.baseurl }}/illustrations/b11-img02.png) #ce(&quot;HCl + H2O -&gt; H3O+ + Cl-&quot;) -&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img03.png) ou en mode maths&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Pour rédiger des documents en sciences physiques, je conseille d’utiliser les deux extensions suivantes :</p><ul>
+<li><a href="https://typst.app/universe/package/whalogen/">whalogen</a> pour la chimie</li>
+<li><a href="https://typst.app/universe/package/fancy-units">fancy-units</a> pour les nombres et les unités.</li>
+</ul>
+<p>Les codes d’importation sont :</p><ul>
+<li><code>#import &quot;@preview/whalogen:0.3.0&quot;: ce</code></li>
+<li><code>#import &quot;@preview/fancy-units:0.1.1&quot;: num, unit, qty, fancy-units-configure</code></li>
+<li><code>#import &quot;@preview/typst-symbols:0.2.0&quot;: sym</code>  (si besoin !)</li>
+</ul>
+<h2 id="1-whalogen">1. Whalogen</h2>
+<h3 id="formule-chimique">Formule chimique</h3>
+<pre><code>#ce(&quot;C2H6O&quot;)
+</code></pre>
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="/illustrations/b11-img01.png" alt="formule" data-is-external-image="true"></figure></p><p>ou</p><pre><code>#ce(&quot;Cl- + NH4^+&quot;)
+</code></pre>
+<p>-&gt; ![formule]({{ site.baseurl }}/illustrations/b11-img02.png)</p><h3 id="équation-chimique-">Équation chimique :</h3>
+<pre><code>#ce(&quot;HCl + H2O -&gt; H3O+ + Cl-&quot;)
+</code></pre>
+<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img03.png)</p><p>ou en mode maths :</p><pre><code>$#ce(&quot;HCl + H2O -&gt; H3O+ + Cl-&quot;)$
+</code></pre>
+<h3 id="écriture-conventionnelle-des-noyaux">Écriture conventionnelle des noyaux</h3>
+<pre><code>#ce(&quot;@Ag,108,47@&quot;)
+</code></pre>
+<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img04.png)</p><p>Pour plus d’informations : <a href="https://github.com/schang412/typst-whalogen/blob/master/manual.pdf">manuel au format pdf</a></p><h2 id="2-fancy-units">2. fancy-units</h2>
+<p>L’écriture des unités n’est pas simple avec Typst. En effet, par défaut les unités à une lettres sont identifiée comme des variables et donc mise en italique, les autres unités doivent être mise entre guillemets et les exposants entre parenthèses, exemple :</p><pre><code>$9,81 N dot &quot;kg&quot;^(-1)$
+</code></pre>
+<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img05.png)</p><p>La solution est alors la suivante :</p><pre><code>$9,81 space upright(N) dot &quot;kg&quot;^(-1)$
+</code></pre>
+<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img06.png)</p><p>Cette manière d’écrire devient lourde assez rapidement.</p><p>L’extension fancy-unit allège cela :</p><pre><code>9,81 #unit[N/kg]
+</code></pre>
+<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img07.png)</p><p>Mais le problème est qu’entre les unités <em>fancy-unit</em> place par défaut un espace et  non un point médian comme c’est l’usage en France. Pas de soucis, le concepteur y a pensé en introduisant la commande <code>#fancy-units-configure()</code>.</p><p>Au début du document, on place la séquence suivante :</p><pre><code>#fancy-units-configure(
+  unit-separator: sym.dot,
+)
+</code></pre>
+<pre><code>9,81 #unit[N/kg]
+</code></pre>
+<p>ce qui donnera : ![équation]({{ site.baseurl }}/illustrations/b11-img08.png)</p><p>Cependant avez-vous remarquez que les chiffres sont plus petits que les lettres. Le mode mathématique rétablit cela, mais l’unité est trop près de la valeur :</p><pre><code>$9,81 #unit[N/kg]$
+</code></pre>
+<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img09.png)</p><pre><code>$9,81 space #unit[N/kg]$
+</code></pre>
+<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img10.png)</p><p>L’écriture est au final légèrement allégée. Il faut penser au mode mathématique et à l’espace ou changer la police du texte (ou la police du mode mathématique) pour harmoniser chiffres et lettres.</p><p>Dans ce paquet, il existe la fonction <em>qty()</em> (quantities) qui combine les fonctions _num()_et <em>unit()</em>.</p><p>Avec la configuration précédentes :</p><pre><code>#qty[9.81][N/kg]
+</code></pre>
+<p>donnera le résultat suivant : ![équation]({{ site.baseurl }}/illustrations/b11-img11.png)</p><p>Chiffres et lettres sont uniformisés mais ce n’est pas le bon séparateur décimal et l’unité s’est légèrement rapprochée du nombre.</p><p>Pour le séparateur décimal :</p><pre><code>#fancy-units-configure(
+  decimal-separator: sym.comma,
+  unit-separator: sym.dot,  
+)
+</code></pre>
+<p>-&gt; ![équation]({{ site.baseurl }}/illustrations/b11-img12.png)</p><p>Pour éloigner les unités d’un espace :</p><pre><code>#fancy-units-configure(
+  decimal-separator: sym.comma,
+  quantity-separator: &quot; &quot;,
+  unit-separator: sym.dot,  
+)
+</code></pre>
+<p>Si l’on ne veut pas que l’unité soit séparée de sa valeur lors d’un changement de ligne et que l’unité soit elle aussi coupée, on déclare :</p><pre><code>#fancy-units-configure(
+  decimal-separator: sym.comma,
+  quantity-separator: sym.space.nobreak,
+  unit-separator: sym.dot + sym.zwj,  
+)
+</code></pre>
+<p>et</p><pre><code>#qty[9.81][N/kg]
+</code></pre>
+<p>fonctionnera parfaitement et l’écriture devient plus intuitive.</p><p>Voilà, le document est configuré pour écrire facilement des textes en sciences avec les conventions françaises.</p><p>Pour découvrir les autres fonctions du paquet : <a href="https://github.com/janekfleper/typst-fancy-units/releases/download/v0.1.1/manual.pdf">manuel au format pdf</a></p><hr>
+<h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
+<ul>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
+</ul>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Les tableaux</title>
+        <author>
+            <name>jym</name>
+        </author>
+        <link href="https://jym55.github.io/les-tableaux.html"/>
+        <id>https://jym55.github.io/les-tableaux.html</id>
+            <category term="typst"/>
+            <category term="tableaux"/>
+
+        <updated>2025-06-29T12:15:00+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Tableau simple avec les cellules de la première colonne en fond gris clair : #set table( fill: (x, y) =&gt; if x == 0 {gray.lighten(80%)}, inset: 1em, ) #table( columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr), align: center, [Ligne 1], [], [], [],[],[], [Ligne 2],&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Tableau simple avec les cellules de la première colonne en fond gris clair :</p><pre><code>#set table(
+    fill: (x, y) =&gt;
+    if x == 0 {gray.lighten(80%)},
+    inset: 1em,
+)
+
+#table(
+    columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr),
+    align: center,
+    [Ligne 1], [], [], [],[],[],
+    [Ligne 2], [], [], [],[],[],
+)
+</code></pre>
+<figure class="post__image"><img loading="lazy" src="/home/jeanyves/Documents/Publii/sites/illustrations" alt="Tableau 1" data-is-external-image="true"></figure><p>–</p><p>Tableau simple avec les cellules de la première ligne en fond gris clair :</p><pre><code>#set table(
+    fill: (x, y) =&gt;
+    if y == 0 {gray.lighten(80%)},
+    inset: 1em,
+) 
+
+#table(
+    columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr),
+    align: center,
+    [Colonne 1], [Colonne 2], [Colonne 3], [Colonne 4],[Colonne 5],[Colonne 6],
+    [], [], [], [],[],[],
+)
+</code></pre>
+<figure class="post__image"><img loading="lazy" src="./illustrations/b10-img02.png" alt="Tableau 2" data-is-external-image="true"></figure><p>–</p><p>Tableau avec la cellule 1 en gris foncé, la première ligne (cellules 1.i) en gris clair ainsi que la première colonne (cellule i.1) :</p><pre><code>#set table(
+    fill: (x, y) =&gt;
+    if x==0 and y == 0 {gray.lighten(30%)}
+        else if y==0 {gray.lighten(80%)}
+            else if x==0 {gray.lighten(80%)},
+    inset: 1em,
+)
+
+#table(
+    columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr),
+    align: center,
+    [cellule 1.1], [cellule 1.2], [cellule 1.3], [],[],[],
+    [cellule 2.1], [], [], [],[],[],
+    [cellule 3.1], [], [], [],[],[],
+
+)
+</code></pre>
+<figure class="post__image"><img loading="lazy" src="./illustrations/b10-img03.png" alt="Tableau 3" data-is-external-image="true"></figure><p>La page de la documentation officielle sur les <a href="https://typst.app/docs/reference/model/table/">tableaux</a></p><hr>
+<h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
+<ul>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
+</ul>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Les images</title>
+        <author>
+            <name>jym</name>
+        </author>
+        <link href="https://jym55.github.io/les-images.html"/>
+        <id>https://jym55.github.io/les-images.html</id>
+            <category term="typst"/>
+            <category term="image"/>
+
+        <updated>2025-06-22T12:13:00+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    La balise “image” L’insertion d’une image se fait de la manière suivante : #image(&quot;img01.png&quot;) ou #image(&quot;img01.png&quot;,width:75%) si l’on veut aussi contrôler sa dimension. On doit utiliser la balise align() pour cela : #align(center)[#image(&quot;img01.png&quot;,width:75%)] Inclure une image dans une grille. Pour placer une illustration à la&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h3 id="la-balise-image">La balise “image”</h3>
+<p>L’insertion d’une image se fait de la manière suivante :</p><pre><code>#image(&quot;img01.png&quot;)
+</code></pre>
+<p>ou</p><pre><code>#image(&quot;img01.png&quot;,width:75%)
+</code></pre>
+<p>si l’on veut aussi contrôler sa dimension.</p><h3 id="centrer-une-image">Centrer une image</h3>
+<p>On doit utiliser la balise <em>align()</em> pour cela :</p><pre><code>#align(center)[#image(&quot;img01.png&quot;,width:75%)]
+</code></pre>
+<h3 id="inclure-une-image-dans-une-grille">Inclure une image dans une grille.</h3>
+<p>Pour placer une illustration à la droite d’un texte, le code peut être le suivant :</p><pre><code>#grid(
+    columns: (60%, 40%),
+    column-gutter: 0.5em,
+    [Le texte dans la colonne de gauche],
+    align(center)[#image(&quot;img01.png&quot;,width:75%)],
+)
+</code></pre>
+<p>Pour placer deux images</p><ul>
+<li>l’une à côté de l’autre, il faut placer une grille dans la grille, comme ceci :</li>
+</ul>
+<pre><code>#grid(
+    columns: (60%, 40%),
+    column-gutter: 0.5em,
+    [Le texte dans la colonne de gauche],
+    [#grid(
+         columns: (50%, 50%),
+         column-gutter: 0.5em,
+         align(center)[#image(&quot;img01.png&quot;,width:75%)],
+         align(center)[#image(&quot;img02.png&quot;,width:75%)],
+         )
+    ],
+)
+</code></pre>
+<ul>
+<li>L’une au-dessous de l’autre :</li>
+</ul>
+<pre><code>#grid(
+    columns: (60%, 40%),
+    column-gutter: 0.5em,
+    [Le texte dans la colonne de gauche],
+    [#align(center)[#image(&quot;img01.png&quot;,width:75%)]
+     #align(center)[#image(&quot;img02.png&quot;,width:75%)]
+    ],
+)
+    
+</code></pre>
+<hr>
+<h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
+<ul>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
+</ul>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title> La numérotation</title>
+        <author>
+            <name>jym</name>
+        </author>
+        <link href="https://jym55.github.io/la-numerotation.html"/>
+        <id>https://jym55.github.io/la-numerotation.html</id>
+            <category term="typst"/>
+            <category term="page"/>
+            <category term="numérotation"/>
+            <category term="listes"/>
+
+        <updated>2025-06-15T18:41:00+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Numérotation des pages Celle-ci s’effectue dans la déclaration des paramètres de la page. #set page( ... numbering: &quot;1&quot;, ) Voici quelques possibilités : #set heading(numbering: &quot;1.&quot;) Cette commande numérotera automatiquement les titres de niveau 1 sous la forme « 1. », les titres de niveau&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h3 id="numérotation-des-pages">Numérotation des pages</h3>
+<p>Celle-ci s’effectue dans la déclaration des paramètres de la page.</p><pre><code>#set page(
+  ...
+  numbering: &quot;1&quot;,
+)
+</code></pre>
+<p>Voici quelques possibilités :</p><ul>
+<li>“numbering: “1” = les pages seront numérotées 1, 2, 3, etc</li>
+<li>“numbering: “I” = les pages seront numérotées I, II, III, etc</li>
+<li>“numbering: “1/1” = la numérotation sera 1/3, 2/3 et 3/3</li>
+</ul>
+<h3 id="numérotation-des-titres">Numérotation des titres</h3>
+<pre><code>#set heading(numbering: &quot;1.&quot;)
+</code></pre>
+<p>Cette commande numérotera automatiquement les titres de niveau 1 sous la forme « 1. », les titres de niveau 2 sous « 1.1. », etc.</p><pre><code>#set heading(numbering: (n1, ..x) =&gt; numbering(&quot;1.&quot;, n1 + 3, ..x))
+</code></pre>
+<p>Cette command permet dans un nouveau document de démarrer le premier titre de niveau 1 avec la valeur 4.</p><h3 id="numérotation-des-listes">Numérotation des listes</h3>
+<h4 id="numérotation-simple">Numérotation simple</h4>
+<p>Une liste numérotée commence soit le chiffre (la lettre) désiré ou par un signe plus.</p><pre><code>1. item 1
++ item 2
+</code></pre>
+<p>ou</p><pre><code>+ item 1
++ item 2
+</code></pre>
+<p>donnent :</p><pre><code>1. item 1
+2. item 2
+</code></pre>
+<p>On peut mixer :</p><pre><code>+ item 1
+3. item 2
++ item 3
+</code></pre>
+<p>donnera</p><pre><code>1. item 1
+3. item 2
+4. item 3
+</code></pre>
+<h4 id="modification-des-listes-numérotées">Modification des listes numérotées</h4>
+<pre><code>1. item 1
+    #set enum(numbering: &quot;a.&quot;)
+    + sous-item 1
+    + sous-item 2
++ item 2
+</code></pre>
+<p>donnera</p><pre><code>1. item 1
+    a. sous-item 1
+    b. sous-item 2
+2. item 2
+</code></pre>
+<pre><code>#set enum(numbering: &quot;1.a.&quot;)
++ item 1
++ item 2
+  + sous-item 1
+  + sous-item 2
++ item 3
+</code></pre>
+<p>donnera</p><pre><code>1. item 1
+2. item 2
+    a. sous-item 1
+    b. sous-item 2
+3. item 3
+</code></pre>
+<pre><code>#set enum(numbering: &quot;1.a.&quot;, full: true)
++ item 1
++ item 2
+  + sous-item 1
+  + sous-item 2
++ item 2
+</code></pre>
+<p>donnera</p><pre><code>1. item 1
+2. item 2
+    2.a. sous-item 1
+    2.b. sous-item 2
+3. item 3
+</code></pre>
+<pre><code>#set enum(start: 4)
++ item 1
++ item 2
+</code></pre>
+<p>donnera</p><pre><code>4. item 1
+5. item 2
+</code></pre>
+<hr>
+<h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
+<ul>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
+</ul>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>La balise grid</title>
+        <author>
+            <name>jym</name>
+        </author>
+        <link href="https://jym55.github.io/la-balise-grid.html"/>
+        <id>https://jym55.github.io/la-balise-grid.html</id>
+            <category term="typst"/>
+            <category term="grid"/>
+
+        <updated>2025-06-08T18:37:00+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Si localement, on veut diviser une page en deux colonnes pour insérer une image par exemple à droite d’un texte, on peut utiliser la balise grid. Il s’agit d’un cas simple, lu structure n’utilisera donc pas toutes les options. #grid( columns: (50%,50%), gutter: 1em, [Le&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Si localement, on veut diviser une page en deux colonnes pour insérer une image par exemple à droite d’un texte, on peut utiliser la balise grid.</p><h3 id="la-structure-de-cette-balise">La structure de cette balise</h3>
+<p>Il s’agit d’un cas simple, lu structure n’utilisera donc pas toutes les options.</p><pre><code>#grid(
+    columns: (50%,50%),
+    gutter: 1em,
+    [Le texte de gauche est placé entre crochets],
+    image(docs/image.png),
+)
+</code></pre>
+<h3 id="explication-de-la-syntaxe">Explication de la syntaxe</h3>
+<p>En fait, la balise “grid()” crée une sorte de tableau de X colonnes et Y lignes. Cependant, si le nombre de lignes n’est pas défini, il n’y a pas de limite. Cette zone de la page est donc découpée en (X × Y) cellules.</p><ul>
+<li>columns : définit le nombre de colonnes désirées avec les proportions de chacune.
+  On peut aussi écrire (1fr,1fr)  “fr” pour fraction de l’espace;</li>
+<li>gutter : déninit l’espace (gouttière) entre les lignes et les colonnes ;</li>
+<li>column-gutter : uniquement pour les colonnes ;</li>
+<li>row-gutter : uniquement pour les lignes ;</li>
+</ul>
+<p>Vient ensuite les données à mettre dans chaque cellule. Une ligne par cellule de gauche à droite, puis passage à la ligne du dessous.</p><pre><code>#grid(
+    columns: (50%,50%),
+    gutter: 1em,
+[texte 1.1],
+[texte 1.2],
+[texte 2.1],
+[texte 2.2],
+)
+</code></pre>
+<p>donnera sur la page :</p><pre><code>La ligne avant la balise &quot;grid&quot; qui occupera toute la largeur de la page.
+
+texte 1.1 | texte 1.2
+texte 2.1 | texte 2.2
+
+La ligne après la balise &quot;grid&quot; qui occupera toute la largeur de la page.
+</code></pre>
+<hr>
+<h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
+<ul>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
+</ul>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title> Paramètres d&#x27;une page</title>
+        <author>
+            <name>jym</name>
+        </author>
+        <link href="https://jym55.github.io/parametres-dune-page-suite.html"/>
+        <id>https://jym55.github.io/parametres-dune-page-suite.html</id>
+            <category term="typst"/>
+            <category term="page"/>
+
+        <updated>2025-06-01T18:34:00+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Exemple d’entête #import &quot;@preview/whalogen:0.2.0&quot;: ce #set page( paper: &quot;a4&quot;, margin: (top: 3cm, x: 1.2cm, y: 1.2cm), header: [ #text(14pt)[*CHAPITRE XX | TITRE*] #h(1fr) NIVEAU #line(length: 100%)], numbering: &quot;1&quot;, ) #set text( font: &quot;Andika&quot;, size: 11pt, lang: &quot;fr&quot;, ) #set par( justify: true, ) #import &quot;@preview/whalogen:0.2.0&quot;:&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h3 id="exemple-dentête">Exemple d’entête</h3>
+<pre><code>#import &quot;@preview/whalogen:0.2.0&quot;: ce
+#set page(
+  paper: &quot;a4&quot;,
+  margin: (top: 3cm, x: 1.2cm, y: 1.2cm),
+  header: [
+     #text(14pt)[*CHAPITRE XX | TITRE*] #h(1fr) NIVEAU
+     #line(length: 100%)],
+  numbering: &quot;1&quot;,
+)
+#set text(
+  font: &quot;Andika&quot;,
+  size: 11pt,
+  lang: &quot;fr&quot;,
+)
+#set par(
+  justify: true,
+)
+</code></pre>
+<pre><code>#import &quot;@preview/whalogen:0.2.0&quot;: ce
+</code></pre>
+<p>importe le paquet « whalogen » et permet l’utilisation de ses fonctions.</p><pre><code>#set page()
+</code></pre>
+<p>configure la page : taille du papier, dimension des marges, l’entête etc.</p><pre><code>#set texte()
+</code></pre>
+<p>configure les paramètres du texte.</p><pre><code># par()
+</code></pre>
+<p>définit les paramètres par défaut des paragraphes.</p><h3 id="comment-avoir-des-entêtes-différents-">Comment avoir des entêtes différents ?</h3>
+<p>Voici le code pour avoir un entête sur la page 1 et un autre entête sur les pages suivantes :</p><pre><code>header: context {
+    if counter(page).get().first() == 1 [
+        #text(14pt)[*CHAPITRE XX | TITRE*] #h(1fr) NIVEAU
+  
+        *NATURE | TITRE* #h(1fr) CLASSE
+
+        #line(length: 100%)]
+  if counter(page).get().first() &gt; 1 [
+        #text(12pt)[CHAPITRE XX | TITRE] #h(1fr) NATURE | TITRE]
+  },
+</code></pre>
+<hr>
+<h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
+<ul>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
+</ul>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Structure d&#x27;un document</title>
+        <author>
+            <name>jym</name>
+        </author>
+        <link href="https://jym55.github.io/structure-dun-document.html"/>
+        <id>https://jym55.github.io/structure-dun-document.html</id>
+            <category term="typst"/>
+
+        <updated>2025-05-25T14:14:00+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    L’entête Un document contient au début des informations de configurations et la liste des paquets à importer. Exemple : #import &quot;@preview/whalogen:0.2.0&quot;: ce #set page( paper: &quot;a4&quot;, margin: (x: 1.2cm, y: 1.2cm), numbering: &quot;1&quot;, ) #set text( font: &quot;Andika&quot;, size: 11pt, lang: &quot;fr&quot;, ) #set par(&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h3 id="lentête">L’entête</h3>
+<p>Un document contient au début des informations de configurations et la liste des paquets à importer.</p><p>Exemple :</p><pre><code>#import &quot;@preview/whalogen:0.2.0&quot;: ce
+
+#set page(
+  paper: &quot;a4&quot;,
+  margin: (x: 1.2cm, y: 1.2cm),
+  numbering: &quot;1&quot;,
+)
+
+#set text(
+  font: &quot;Andika&quot;,
+  size: 11pt,
+  lang: &quot;fr&quot;,
+)
+
+#set par(
+  justify: true,
+)
+</code></pre>
+<h3 id="le-corps-du-document">Le corps du document</h3>
+<p>Ensuite vient le texte avec les balises de formatage du texte (titre, texte en gras, etc.) et les balises de mise en page (numérotation des paragraphes, mise place de colonnes, insertion d’image, etc.)</p><p>Exemple :</p><pre><code>= Titre de niveau 1
+== Titre de niveau 2
+Une image s&#39;insère avec la balise suivante :
+#image(&quot;img/image.png&quot;)
+mais elle peut contenir une information sur la taille désirée
+</code></pre>
+<hr>
+<h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
+<ul>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
+</ul>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Découverte de Typst</title>
+        <author>
+            <name>jym</name>
+        </author>
+        <link href="https://jym55.github.io/decouverte-de-typst.html"/>
+        <id>https://jym55.github.io/decouverte-de-typst.html</id>
+            <category term="typst"/>
+
+        <updated>2025-05-18T13:32:00+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Typst ? Le but de ce blog est d’être un mémo (toutefois sans prétention aucune) principalement pour le logiciel Typst pouvant servir de base pour rapidement créer des documents à l’aide Typst. Une documentation existe bien mais elle est en anglais et les explications pas&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h2 id="typst-">Typst ?</h2>
+<p>Le but de ce blog est d’être un mémo (toutefois sans prétention aucune) principalement pour le logiciel Typst pouvant servir de base pour rapidement créer des documents à l’aide Typst. Une documentation existe bien mais elle est en anglais et les explications pas forcément évidentes à mon avis.</p><h3 id="description-du-logiciel">Description du logiciel</h3>
+<p><a href="https://typst.app/">Typst</a> est un logiciel un langage et un système de composition de documents à vocation scientifique. En cela, il ressemble à LaTeX.</p><p>Les documents sont écrits dans un simple éditeur de texte, comme gedit ou bloc-notes. La mise page et le formatage du texte se font à l’aide de deux langages de balisage :</p><ul>
+<li>un dérivé du Markdown pour le texte ;</li>
+<li>le balisage Typst pour la mise en page ;</li>
+</ul>
+<p>Le moteur de composition transformera ensuite ce document texte en un fichier pdf.</p><h3 id="comment-produire-des-documents">Comment produire des documents</h3>
+<p>Comme pour LaTeX différentes solutions sont disponibles :</p><h4 id="méthode-basique">Méthode basique</h4>
+<ul>
+<li>télécharger et installer sur son ordinateur le moteur de composition disponible à cette <a href="https://github.com/typst/typst#installation">adresse</a></li>
+<li>écrire les documents avec un éditeur de texte ;</li>
+<li>générer le document pdf en utilisant le moteur de composition en ligne de commande dans un terminal.</li>
+</ul>
+<h4 id="la-webapp-officiel-de-typst">La webapp officiel de Typst</h4>
+<ul>
+<li>C’est un <a href="https://typst.app/">IDE en ligne</a></li>
+</ul>
+<h4 id="le-logiciel-visual-studio-code">Le logiciel Visual Studio Code</h4>
+<p>Utiliser le logiciel Visual Studio Code avec les extensions :</p><ul>
+<li>l’extension Typst LSP</li>
+<li>vscode-pdf (afin de prévisualiser le pdf dans Visual Studio Code)</li>
+</ul>
+<h4 id="lide-katvan">L’IDE Katvan</h4>
+<ul>
+<li><a href="https://github.com/IgKh/katvan">katvan</a>
+Un IDE minimaliste mais qui permet de prévisualiser le fichier pdf et qui intègre le moteur de composition. Très suffisant pour écrire des documents de plusieurs pages. Je l’utilise depuis mes débuts dans le monde Typst et j’en suis très satisfait.</li>
+</ul>
+<h3 id="compléments">Compléments</h3>
+<ul>
+<li>La documentation officielle est <a href="https://typst.app/docs/">ici</a> (attention ! en anglais).</li>
+<li>Quelques adresses en français :<ul>
+<li><a href="http://revue.sesamath.net/spip.php?article1611">http://revue.sesamath.net/spip.php?article1611</a></li>
+<li><a href="https://www.arthurperret.fr/veille/2024-08-29-typst.html">https://www.arthurperret.fr/veille/2024-08-29-typst.html</a></li>
+</ul>
+</li>
+<li>Une vidéo <a href="https://youtu.be/_JKWzMJEwN0?feature=shared">YouTube</a></li>
+</ul>
+<hr>
+<h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
+<ul>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/comments">Laisser un commentaire</a></li>
+<li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/q-a">Poser une question</a></li>
+</ul>
+
+            ]]>
+        </content>
+    </entry>
+</feed>
