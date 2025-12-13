@@ -3,7 +3,7 @@
     <title>Le carnet de JYM</title>
     <link href="https://jym55.github.io/feed.xml" rel="self" />
     <link href="https://jym55.github.io" />
-    <updated>2025-12-13T18:31:34+01:00</updated>
+    <updated>2025-12-13T18:53:30+01:00</updated>
     <author>
         <name>jym</name>
     </author>
@@ -122,6 +122,8 @@ table.cell(colspan: 2, align: left,)[équation],[], [a.A],table.cell(colspan: 2,
         </author>
         <link href="https://jym55.github.io/extensions-scientifiques.html"/>
         <id>https://jym55.github.io/extensions-scientifiques.html</id>
+            <category term="typst"/>
+            <category term="formules"/>
 
         <updated>2025-09-07T12:18:00+02:00</updated>
             <summary type="html">
@@ -233,7 +235,7 @@ table.cell(colspan: 2, align: left,)[équation],[], [a.A],table.cell(colspan: 2,
     [Ligne 2], [], [], [],[],[],
 )
 </code></pre>
-<figure class="post__image"><img loading="lazy" src="./illustrations/b10-img01.png" alt="Tableau 1" data-is-external-image="true"></figure><p>–</p><p>Tableau simple avec les cellules de la première ligne en fond gris clair :</p><pre><code>#set table(
+<figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/b10-img01.png" alt="Tableau 1" data-is-external-image="true"></figure><p>–</p><p>Tableau simple avec les cellules de la première ligne en fond gris clair :</p><pre><code>#set table(
     fill: (x, y) =&gt;
     if y == 0 {gray.lighten(80%)},
     inset: 1em,
@@ -246,7 +248,7 @@ table.cell(colspan: 2, align: left,)[équation],[], [a.A],table.cell(colspan: 2,
     [], [], [], [],[],[],
 )
 </code></pre>
-<figure class="post__image"><img loading="lazy" src="./illustrations/b10-img02.png" alt="Tableau 2" data-is-external-image="true"></figure><p>–</p><p>Tableau avec la cellule 1 en gris foncé, la première ligne (cellules 1.i) en gris clair ainsi que la première colonne (cellule i.1) :</p><pre><code>#set table(
+<figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/b10-img02.png" alt="Tableau 2" data-is-external-image="true"></figure><p>–</p><p>Tableau avec la cellule 1 en gris foncé, la première ligne (cellules 1.i) en gris clair ainsi que la première colonne (cellule i.1) :</p><pre><code>#set table(
     fill: (x, y) =&gt;
     if x==0 and y == 0 {gray.lighten(30%)}
         else if y==0 {gray.lighten(80%)}
@@ -263,7 +265,7 @@ table.cell(colspan: 2, align: left,)[équation],[], [a.A],table.cell(colspan: 2,
 
 )
 </code></pre>
-<figure class="post__image"><img loading="lazy" src="./illustrations/b10-img03.png" alt="Tableau 3" data-is-external-image="true"></figure><p>La page de la documentation officielle sur les <a href="https://typst.app/docs/reference/model/table/">tableaux</a></p><hr>
+<figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/b10-img03.png" alt="Tableau 3" data-is-external-image="true"></figure><p>La page de la documentation officielle sur les <a href="https://typst.app/docs/reference/model/table/">tableaux</a></p><hr>
 <h4 id="réagir-à-ce-billet-">Réagir à ce billet :</h4>
 <ul>
 <li><a href="https://github.com/jym55/jym55.github.io/discussions/categories/commentaires">Laisser un commentaire</a></li>
