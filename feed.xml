@@ -3,7 +3,7 @@
     <title>Le carnet de JYM</title>
     <link href="https://jym55.github.io/feed.xml" rel="self" />
     <link href="https://jym55.github.io" />
-    <updated>2025-12-13T18:59:52+01:00</updated>
+    <updated>2025-12-13T19:03:57+01:00</updated>
     <author>
         <name>jym</name>
     </author>
@@ -146,41 +146,41 @@ table.cell(colspan: 2, align: left,)[équation],[], [a.A],table.cell(colspan: 2,
 <h3 id="formule-chimique">Formule chimique</h3>
 <pre><code>#ce(&quot;C2H6O&quot;)
 </code></pre>
-<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img01.png" alt="formule" data-is-external-image="true"></figure></p><p>ou</p><pre><code>#ce(&quot;Cl- + NH4^+&quot;)
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b11-img01.png?raw=true" alt="formule" data-is-external-image="true"></figure></p><p>ou</p><pre><code>#ce(&quot;Cl- + NH4^+&quot;)
 </code></pre>
-<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img02.png" alt="formule" data-is-external-image="true"></figure></p><h3 id="équation-chimique-">Équation chimique :</h3>
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b11-img02.png?raw=true" alt="formule" data-is-external-image="true"></figure></p><h3 id="équation-chimique-">Équation chimique :</h3>
 <pre><code>#ce(&quot;HCl + H2O -&gt; H3O+ + Cl-&quot;)
 </code></pre>
-<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img03.png" alt="équation" data-is-external-image="true"></figure></p><p>ou en mode maths :</p><pre><code>$#ce(&quot;HCl + H2O -&gt; H3O+ + Cl-&quot;)$
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b11-img03.png?raw=true" alt="équation" data-is-external-image="true"></figure></p><p>ou en mode maths :</p><pre><code>$#ce(&quot;HCl + H2O -&gt; H3O+ + Cl-&quot;)$
 </code></pre>
 <h3 id="écriture-conventionnelle-des-noyaux">Écriture conventionnelle des noyaux</h3>
 <pre><code>#ce(&quot;@Ag,108,47@&quot;)
 </code></pre>
-<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img04.png" alt="équation" data-is-external-image="true"></figure></p><p>Pour plus d’informations : <a href="https://github.com/schang412/typst-whalogen/blob/master/manual.pdf">manuel au format pdf</a></p><h2 id="2-fancy-units">2. fancy-units</h2>
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b11-img04.png?raw=true" alt="équation" data-is-external-image="true"></figure></p><p>Pour plus d’informations : <a href="https://github.com/schang412/typst-whalogen/blob/master/manual.pdf">manuel au format pdf</a></p><h2 id="2-fancy-units">2. fancy-units</h2>
 <p>L’écriture des unités n’est pas simple avec Typst. En effet, par défaut les unités à une lettres sont identifiée comme des variables et donc mise en italique, les autres unités doivent être mise entre guillemets et les exposants entre parenthèses, exemple :</p><pre><code>$9,81 N dot &quot;kg&quot;^(-1)$
 </code></pre>
-<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img05.png" alt="équation" data-is-external-image="true"></figure></p><p>La solution est alors la suivante :</p><pre><code>$9,81 space upright(N) dot &quot;kg&quot;^(-1)$
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b11-img05.png?raw=true" alt="équation" data-is-external-image="true"></figure></p><p>La solution est alors la suivante :</p><pre><code>$9,81 space upright(N) dot &quot;kg&quot;^(-1)$
 </code></pre>
-<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img06.png" alt="équation" data-is-external-image="true"></figure></p><p>Cette manière d’écrire devient lourde assez rapidement.</p><p>L’extension fancy-unit allège cela :</p><pre><code>9,81 #unit[N/kg]
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b11-img06.png?raw=true" alt="équation" data-is-external-image="true"></figure></p><p>Cette manière d’écrire devient lourde assez rapidement.</p><p>L’extension fancy-unit allège cela :</p><pre><code>9,81 #unit[N/kg]
 </code></pre>
-<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img07.png" alt="équation" data-is-external-image="true"></figure></p><p>Mais le problème est qu’entre les unités <em>fancy-unit</em> place par défaut un espace et  non un point médian comme c’est l’usage en France. Pas de soucis, le concepteur y a pensé en introduisant la commande <code>#fancy-units-configure()</code>.</p><p>Au début du document, on place la séquence suivante :</p><pre><code>#fancy-units-configure(
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b11-img07.png?raw=true" alt="équation" data-is-external-image="true"></figure></p><p>Mais le problème est qu’entre les unités <em>fancy-unit</em> place par défaut un espace et  non un point médian comme c’est l’usage en France. Pas de soucis, le concepteur y a pensé en introduisant la commande <code>#fancy-units-configure()</code>.</p><p>Au début du document, on place la séquence suivante :</p><pre><code>#fancy-units-configure(
   unit-separator: sym.dot,
 )
 </code></pre>
 <pre><code>9,81 #unit[N/kg]
 </code></pre>
-<p>ce qui donnera : <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img08.png" alt="équation" data-is-external-image="true"></figure></p><p>Cependant avez-vous remarquez que les chiffres sont plus petits que les lettres. Le mode mathématique rétablit cela, mais l’unité est trop près de la valeur :</p><pre><code>$9,81 #unit[N/kg]$
+<p>ce qui donnera : <figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b11-img08.png?raw=true" alt="équation" data-is-external-image="true"></figure></p><p>Cependant avez-vous remarquez que les chiffres sont plus petits que les lettres. Le mode mathématique rétablit cela, mais l’unité est trop près de la valeur :</p><pre><code>$9,81 #unit[N/kg]$
 </code></pre>
-<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img09.png" alt="équation" data-is-external-image="true"></figure></p><pre><code>$9,81 space #unit[N/kg]$
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b11-img09.png?raw=true" alt="équation" data-is-external-image="true"></figure></p><pre><code>$9,81 space #unit[N/kg]$
 </code></pre>
-<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img10.png" alt="équation" data-is-external-image="true"></figure></p><p>L’écriture est au final légèrement allégée. Il faut penser au mode mathématique et à l’espace ou changer la police du texte (ou la police du mode mathématique) pour harmoniser chiffres et lettres.</p><p>Dans ce paquet, il existe la fonction <em>qty()</em> (quantities) qui combine les fonctions _num()_et <em>unit()</em>.</p><p>Avec la configuration précédentes :</p><pre><code>#qty[9.81][N/kg]
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b11-img10.png?raw=true" alt="équation" data-is-external-image="true"></figure></p><p>L’écriture est au final légèrement allégée. Il faut penser au mode mathématique et à l’espace ou changer la police du texte (ou la police du mode mathématique) pour harmoniser chiffres et lettres.</p><p>Dans ce paquet, il existe la fonction <em>qty()</em> (quantities) qui combine les fonctions _num()_et <em>unit()</em>.</p><p>Avec la configuration précédentes :</p><pre><code>#qty[9.81][N/kg]
 </code></pre>
-<p>donnera le résultat suivant : <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img11.png" alt="équation" data-is-external-image="true"></figure></p><p>Chiffres et lettres sont uniformisés mais ce n’est pas le bon séparateur décimal et l’unité s’est légèrement rapprochée du nombre.</p><p>Pour le séparateur décimal :</p><pre><code>#fancy-units-configure(
+<p>donnera le résultat suivant : <figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b11-img11.png?raw=true" alt="équation" data-is-external-image="true"></figure></p><p>Chiffres et lettres sont uniformisés mais ce n’est pas le bon séparateur décimal et l’unité s’est légèrement rapprochée du nombre.</p><p>Pour le séparateur décimal :</p><pre><code>#fancy-units-configure(
   decimal-separator: sym.comma,
   unit-separator: sym.dot,  
 )
 </code></pre>
-<p>-&gt; <figure class="post__image"><img loading="lazy" src="./illustrations/b11-img12.png" alt="équation" data-is-external-image="true"></figure></p><p>Pour éloigner les unités d’un espace :</p><pre><code>#fancy-units-configure(
+<p>-&gt; <figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b11-img12.png?raw=true" alt="équation" data-is-external-image="true"></figure></p><p>Pour éloigner les unités d’un espace :</p><pre><code>#fancy-units-configure(
   decimal-separator: sym.comma,
   quantity-separator: &quot; &quot;,
   unit-separator: sym.dot,  
@@ -235,8 +235,7 @@ table.cell(colspan: 2, align: left,)[équation],[], [a.A],table.cell(colspan: 2,
     [Ligne 2], [], [], [],[],[],
 )
 </code></pre>
-<p><a href="https://github.com/jym55/blog-illustrations/blob/main/b10-img01.png?raw=true">https://github.com/jym55/blog-illustrations/blob/main/b10-img01.png?raw=true</a>
-<figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b10-img01.png?raw=true" alt="Tableau 1" data-is-external-image="true"></figure></p><p>–</p><p>Tableau simple avec les cellules de la première ligne en fond gris clair :</p><pre><code>#set table(
+<figure class="post__image"><img loading="lazy" src="https://github.com/jym55/blog-illustrations/blob/main/b10-img01.png?raw=true" alt="Tableau 1" data-is-external-image="true"></figure><p>–</p><p>Tableau simple avec les cellules de la première ligne en fond gris clair :</p><pre><code>#set table(
     fill: (x, y) =&gt;
     if y == 0 {gray.lighten(80%)},
     inset: 1em,
