@@ -8,8 +8,8 @@ Ce dépôt centralise des notes, des tutoriels, des astuces et des exemples de c
 
 Ce projet est ouvert aux contributions de la communauté francophone ! Si vous souhaitez améliorer une note, signaler une erreur ou proposer une nouvelle publication :
 
-1.  Ouvrez une **Issue** pour signaler un bug ou une idée.
-2.  Créez une **Pull Request** pour soumettre vos modifications.
+1.  Ouvrez une **Discussions** et déposer un commentaire pour signaler un bug ou une idée.
+2.  Ouvrer une **Discussion** et soumettez voter questions.
 
 ## Licence
 
