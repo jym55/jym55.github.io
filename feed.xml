@@ -22,7 +22,7 @@
         <updated>2025-10-30T18:31:00+01:00</updated>
             <summary type="html">
                 <![CDATA[
-                    Un tableau d’avancement en chimie Voici le code pour obtenir un tableau d’avancement en chimie : table( columns: (auto, auto, auto, auto, auto, auto, auto,auto, auto, auto, auto, auto, auto, auto), align: center, stroke: 0.4pt, table.hline(y: 0, stroke: none,), table.hline(y: 4, stroke: none, end: 1),&hellip;
+                    Un tableau d’avancement en chimie Voici le code pour obtenir un tableau&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -80,7 +80,7 @@ table.cell(colspan: 2, align: left,)[équation],[], [a.A],table.cell(colspan: 2,
         <updated>2025-09-14T18:28:00+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                    Placer un paragraphe ou un texte sur un fond Voici le code : #block( fill: luma(230), inset: 8pt, radius: 4pt, width: 100%, [#lorem(40)], ) -&gt; Code à placer en début de fichier. #let asavoir(body) = { block( fill: luma(230), inset: 8pt, radius: 4pt, width: 100%,&hellip;
+                    Placer un paragraphe ou un texte sur un fond Voici le code&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -128,7 +128,7 @@ table.cell(colspan: 2, align: left,)[équation],[], [a.A],table.cell(colspan: 2,
         <updated>2025-09-07T12:18:00+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                    Pour rédiger des documents en sciences physiques, je conseille d’utiliser les deux extensions suivantes : Les codes d’importation sont : #ce(&quot;C2H6O&quot;) -&gt; ou #ce(&quot;Cl- + NH4^+&quot;) -&gt; #ce(&quot;HCl + H2O -&gt; H3O+ + Cl-&quot;) -&gt; ou en mode maths : $#ce(&quot;HCl + H2O -&gt; H3O+&hellip;
+                    Pour rédiger des documents en sciences physiques, je conseille d’utiliser les deux&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -217,7 +217,7 @@ table.cell(colspan: 2, align: left,)[équation],[], [a.A],table.cell(colspan: 2,
         <updated>2025-06-29T12:15:00+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                    Tableau simple avec les cellules de la première colonne en fond gris clair : #set table( fill: (x, y) =&gt; if x == 0 {gray.lighten(80%)}, inset: 1em, ) #table( columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr), align: center, [Ligne 1], [], [], [],[],[], [Ligne 2],&hellip;
+                    Tableau simple avec les cellules de la première colonne en fond gris&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -288,7 +288,7 @@ table.cell(colspan: 2, align: left,)[équation],[], [a.A],table.cell(colspan: 2,
         <updated>2025-06-22T12:13:00+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                    La balise “image” L’insertion d’une image se fait de la manière suivante : #image(&quot;img01.png&quot;) ou #image(&quot;img01.png&quot;,width:75%) si l’on veut aussi contrôler sa dimension. On doit utiliser la balise align() pour cela : #align(center)[#image(&quot;img01.png&quot;,width:75%)] Inclure une image dans une grille. Pour placer une illustration à la&hellip;
+                    La balise “image” L’insertion d’une image se fait de la manière suivante&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -363,7 +363,7 @@ table.cell(colspan: 2, align: left,)[équation],[], [a.A],table.cell(colspan: 2,
         <updated>2025-06-15T18:41:00+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                    Numérotation des pages Celle-ci s’effectue dans la déclaration des paramètres de la page. #set page( ... numbering: &quot;1&quot;, ) Voici quelques possibilités : #set heading(numbering: &quot;1.&quot;) Cette commande numérotera automatiquement les titres de niveau 1 sous la forme « 1. », les titres de niveau&hellip;
+                    Numérotation des pages Celle-ci s’effectue dans la déclaration des paramètres de la&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -471,7 +471,7 @@ table.cell(colspan: 2, align: left,)[équation],[], [a.A],table.cell(colspan: 2,
         <updated>2025-06-08T18:37:00+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                    Si localement, on veut diviser une page en deux colonnes pour insérer une image par exemple à droite d’un texte, on peut utiliser la balise grid. Il s’agit d’un cas simple, lu structure n’utilisera donc pas toutes les options. #grid( columns: (50%,50%), gutter: 1em, [Le&hellip;
+                    Si localement, on veut diviser une page en deux colonnes pour insérer&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -531,7 +531,7 @@ La ligne après la balise &quot;grid&quot; qui occupera toute la largeur de la p
         <updated>2025-06-01T18:34:00+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                    Exemple d’entête #import &quot;@preview/whalogen:0.2.0&quot;: ce #set page( paper: &quot;a4&quot;, margin: (top: 3cm, x: 1.2cm, y: 1.2cm), header: [ #text(14pt)[*CHAPITRE XX | TITRE*] #h(1fr) NIVEAU #line(length: 100%)], numbering: &quot;1&quot;, ) #set text( font: &quot;Andika&quot;, size: 11pt, lang: &quot;fr&quot;, ) #set par( justify: true, ) #import &quot;@preview/whalogen:0.2.0&quot;:&hellip;
+                    Exemple d’entête #import &quot;@preview/whalogen:0.2.0&quot;: ce #set page( paper: &quot;a4&quot;, margin: (top: 3cm,&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -597,7 +597,7 @@ La ligne après la balise &quot;grid&quot; qui occupera toute la largeur de la p
         <updated>2025-05-25T14:14:00+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                    L’entête Un document contient au début des informations de configurations et la liste des paquets à importer. Exemple : #import &quot;@preview/whalogen:0.2.0&quot;: ce #set page( paper: &quot;a4&quot;, margin: (x: 1.2cm, y: 1.2cm), numbering: &quot;1&quot;, ) #set text( font: &quot;Andika&quot;, size: 11pt, lang: &quot;fr&quot;, ) #set par(&hellip;
+                    L’entête Un document contient au début des informations de configurations et la&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -650,7 +650,7 @@ mais elle peut contenir une information sur la taille désirée
         <updated>2025-05-18T13:32:00+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                    Typst ? Le but de ce blog est d’être un mémo (toutefois sans prétention aucune) principalement pour le logiciel Typst pouvant servir de base pour rapidement créer des documents à l’aide Typst. Une documentation existe bien mais elle est en anglais et les explications pas&hellip;
+                    Typst ? Le but de ce blog est d’être un mémo (toutefois&hellip;
                 ]]>
             </summary>
         <content type="html">
